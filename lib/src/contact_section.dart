@@ -7,7 +7,7 @@ class ContactSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Theme.of(context).primaryColor,
+      color: Theme.of(context).colorScheme.primaryContainer,
       padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 20),
       child: const Column(
         crossAxisAlignment: CrossAxisAlignment.center,
