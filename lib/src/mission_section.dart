@@ -1,86 +1,78 @@
 import 'package:component_library/component_library.dart';
 import 'package:flutter/material.dart';
 
-class MissionVisionValuesSection extends StatelessWidget {
-  const MissionVisionValuesSection({super.key});
+class MissionSection extends StatelessWidget {
+  const MissionSection({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 80, horizontal: 20),
-      color: const Color(0xFF1E8449), // Background color
-      child: const Column(
+      padding: const EdgeInsets.symmetric(vertical: 40),
+      color: Theme.of(context).colorScheme.primary,
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
             'Our Mission, Vision & Core Values',
-            style: TextStyle(
-              fontSize: 36,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-            ),
-            textAlign: TextAlign.center,
+            style: Theme.of(context).textTheme.headlineLarge,
           ),
-          SizedBox(height: 40),
-          MissionSection(),
-          OurValuesSection(),
+          const Wrap(
+            children: [
+              ItemCard(
+                icon: Icons.directions,
+                title: 'Our Mission',
+                description:
+                    'To provide sustainable solutions for a greener planet and empower businesses to minimize their environmental impact.',
+              ),
+              ItemCard(
+                icon: Icons.visibility,
+                title: 'Our Mission',
+                description:
+                    'To provide sustainable solutions for a greener planet and empower businesses to minimize their environmental impact.',
+              ),
+            ],
+          ),
+          Text(
+            'Our Core Values',
+            style: Theme.of(context).textTheme.headlineLarge,
+          ),
+          const SizedBox(height: 40),
+          const Wrap(
+            children: [
+              ValueCard(
+                title: 'Environmental Stewardship',
+                icon: Icons.eco,
+                color: Color(0xFF2ECC71),
+              ),
+              ValueCard(
+                title: 'Innovation',
+                icon: Icons.lightbulb_outline,
+                color: Color(0xFF3498DB),
+              ),
+            ],
+          ),
+          const Wrap(
+            children: [
+              ValueCard(
+                title: 'Integrity',
+                icon: Icons.security,
+                color: Color(0xFFF39C12),
+              ),
+              ValueCard(
+                title: 'Collaboration',
+                icon: Icons.people,
+                color: Color(0xFF9B59B6),
+              ),
+              ValueCard(
+                title: 'Excellence',
+                icon: Icons.star,
+                color: Color(0xFFE74C3C),
+              ),
+            ],
+          ),
         ],
       ),
-    );
-  }
-}
-
-class OurValuesSection extends StatelessWidget {
-  const OurValuesSection({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Text(
-          'Our Core Values',
-          style: TextStyle(
-            fontSize: 36,
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-          ),
-        ),
-        SizedBox(height: 40),
-        Wrap(
-          children: [
-            ValueCard(
-              title: 'Environmental Stewardship',
-              icon: Icons.eco,
-              color: Color(0xFF2ECC71),
-            ),
-            ValueCard(
-              title: 'Innovation',
-              icon: Icons.lightbulb_outline,
-              color: Color(0xFF3498DB),
-            ),
-          ],
-        ),
-        Wrap(
-          children: [
-            ValueCard(
-              title: 'Integrity',
-              icon: Icons.security,
-              color: Color(0xFFF39C12),
-            ),
-            ValueCard(
-              title: 'Collaboration',
-              icon: Icons.people,
-              color: Color(0xFF9B59B6),
-            ),
-            ValueCard(
-              title: 'Excellence',
-              icon: Icons.star,
-              color: Color(0xFFE74C3C),
-            ),
-          ],
-        ),
-      ],
     );
   }
 }
@@ -133,30 +125,6 @@ class ValueCard extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-}
-
-class MissionSection extends StatelessWidget {
-  const MissionSection({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Wrap(
-      children: [
-        ItemCard(
-          icon: Icons.directions,
-          title: 'Our Mission',
-          description:
-              'To provide sustainable solutions for a greener planet and empower businesses to minimize their environmental impact.',
-        ),
-        ItemCard(
-          icon: Icons.visibility,
-          title: 'Our Mission',
-          description:
-              'To provide sustainable solutions for a greener planet and empower businesses to minimize their environmental impact.',
-        ),
-      ],
     );
   }
 }

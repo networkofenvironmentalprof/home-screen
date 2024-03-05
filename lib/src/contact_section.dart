@@ -8,11 +8,11 @@ class ContactSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Theme.of(context).primaryColor,
-      padding: const EdgeInsets.symmetric(vertical: 60, horizontal: 20),
-      child: Column(
+      padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 20),
+      child: const Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const Text(
+          Text(
             'Contact Us',
             style: TextStyle(
               fontSize: 28,
@@ -20,8 +20,8 @@ class ContactSection extends StatelessWidget {
               color: Colors.white,
             ),
           ),
-          const SizedBox(height: 40),
-          const Column(
+          SizedBox(height: 40),
+          Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -43,16 +43,8 @@ class ContactSection extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: 10),
-          SocialMediaLinks(
-            onFacebook: () {},
-            onTwitter: () {},
-            onInstagram: () {},
-            onLinkedIn: () {},
-            onWhatsapp: () {},
-          ),
-          const SizedBox(height: 40),
-          const Text(
+          SizedBox(height: 48),
+          Text(
             '© 2024 Green Earth Consultancy. All rights reserved.',
             style: TextStyle(
               color: Colors.white,
